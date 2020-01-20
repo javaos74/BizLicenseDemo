@@ -8,7 +8,7 @@
   <sap:VirtualizedContainerService.HintSize>699.333333333333,696</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ClovaMain_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="50">
+    <scg:List x:TypeArguments="x:String" Capacity="26">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -71,6 +71,7 @@
       <Variable x:TypeArguments="ui:QueueItem" Name="QueueItem" />
       <Variable x:TypeArguments="x:String" Name="CompRegNo" />
       <Variable x:TypeArguments="sd:DataTable" Name="BizLicDT" />
+      <Variable x:TypeArguments="x:String" Name="BizName" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -92,13 +93,13 @@
           <av:PointCollection x:Key="ConnectorLocation">460,334.666666666667 460,364.666666666667 392,364.666666666667 392,386.666666666667</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Queue에서 데이터 가져오기 " sap:VirtualizedContainerService.HintSize="800,1404" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Queue에서 데이터 가져오기 " sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:BuildDataTable DataTable="[BizLicDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="758,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;항목&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;값&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;항목&gt;등록번호&lt;/항목&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;항목&gt;법인명&lt;/항목&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;항목&gt;대표자&lt;/항목&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;항목&gt;개업연월일&lt;/항목&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;항목&gt;사업장소재지&lt;/항목&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;항목&gt;업태&lt;/항목&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;항목&gt;종목&lt;/항목&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+        <ui:BuildDataTable DataTable="[BizLicDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="758,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;항목&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;값&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;항목&gt;등록번호&lt;/항목&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;항목&gt;법인명&lt;/항목&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;항목&gt;대표자&lt;/항목&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;항목&gt;개업연월일&lt;/항목&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;항목&gt;사업장소재지&lt;/항목&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;항목&gt;업태&lt;/항목&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;항목&gt;종목&lt;/항목&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
         <Assign sap:VirtualizedContainerService.HintSize="758,62" sap2010:WorkflowViewState.IdRef="Assign_3">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[BizValidStatus]</OutArgument>
@@ -108,25 +109,25 @@
           </Assign.Value>
         </Assign>
         <ui:WaitQueueItem PollTimeMS="{x:Null}" Reference="{x:Null}" ContinueOnError="True" DisplayName="Wait Queue Item" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="758,22" sap2010:WorkflowViewState.IdRef="WaitQueueItem_1" QueueName="ClovaQueue" Result="[QueueItem]" TimeoutMS="60000" />
-        <If Condition="[QueueItem isNot Nothing]" DisplayName="If &gt; QueueItem 내용 체크 " sap:VirtualizedContainerService.HintSize="758,1049.33333333333" sap2010:WorkflowViewState.IdRef="If_2">
+        <If Condition="[QueueItem isNot Nothing]" DisplayName="If &gt; QueueItem 내용 체크 " sap:VirtualizedContainerService.HintSize="758,2017.33333333333" sap2010:WorkflowViewState.IdRef="If_2">
           <If.Then>
-            <Sequence sap:VirtualizedContainerService.HintSize="612,895.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence sap:VirtualizedContainerService.HintSize="612,1863.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="njl:JObject" Name="BizLicData" />
                 <Variable x:TypeArguments="x:String" Name="InferResult" />
+                <Variable x:TypeArguments="njl:JArray" Name="jFields" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[BizLicData]" JsonString="[QueueItem.SpecificContent(&quot;Data&quot;).ToString]" />
-              <Assign sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_9">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[InferResult]</OutArgument>
+                  <OutArgument x:TypeArguments="njl:JArray">[jFields]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[BizLicData.GetValue("inferResult").ToString]</InArgument>
+                  <InArgument x:TypeArguments="njl:JArray" xml:space="preserve">[JArray.Parse(  QueueItem.SpecificContent("Data").ToString)]</InArgument>
                 </Assign.Value>
               </Assign>
               <Assign sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_5">
@@ -137,13 +138,13 @@
                   <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="570,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[BizLicData.GetValue(&quot;fields&quot;).ToList]">
+              <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="570,1122.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[jFields]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="njl:JObject">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="njl:JObject" Name="field" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,728" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,984" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Int32" Name="RowIndex" />
                         <Variable x:TypeArguments="x:String" Name="KeyName" />
@@ -186,12 +187,24 @@
                           </Assign>
                         </If.Then>
                       </If>
+                      <If Condition="[KeyName = &quot;법인명&quot;]" sap:VirtualizedContainerService.HintSize="484,216" sap2010:WorkflowViewState.IdRef="If_5">
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_10">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[BizName]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[field.GetValue("inferText").ToString.Trim]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                      </If>
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEach.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -253,55 +266,115 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">130,496.04</av:Point>
                   <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">130,530.706666666667 100,530.706666666667 100,130 190,130</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Sequence DisplayName="최종 결과 메일 보내기 " sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="MailSubject" />
+                  <Variable x:TypeArguments="x:String" Name="variable1" />
+                  <Variable x:TypeArguments="x:String" Name="MailBody" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot; 사업자 등록증 상태 : {0}&quot;,  if ( BizValidStatus, &quot;정상&quot;, &quot;비정상&quot;))]" />
-                <ui:WriteRange AddHeaders="True" DataTable="[BizLicDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="사업자정보" StartingCell="A1" WorkbookPath="[String.Format(&quot;사업자등록번호-{0}.xlsx&quot;, CompRegNo)]" />
-              </Sequence>
-              <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID1">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">190,119</av:Point>
-                      <av:Size x:Key="ShapeSize">200,22</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">290,141 290,171 283.333333333333,171 283.333333333333,186.666666666667</av:PointCollection>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:ShouldStop DisplayName="Should Stop" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ShouldStop_1" Result="[StopSignal]">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:ShouldStop>
-                  <FlowStep.Next>
-                    <FlowDecision x:Name="__ReferenceID2" Condition="[StopSignal]" DisplayName="중지요청이 있는지" sap:VirtualizedContainerService.HintSize="105.333333333333,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="654,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot; {0}  사업자 등록증 상태 : {1}&quot;, BizName,  if ( BizValidStatus, &quot;정상&quot;, &quot;비정상&quot;))]" />
+                <ui:WriteRange AddHeaders="True" DataTable="[BizLicDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="654,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="사업자정보" StartingCell="A1" WorkbookPath="[String.Format(&quot;사업자등록번호-{0}.xlsx&quot;, CompRegNo)]" />
+                <If Condition="[BizValidStatus]" sap:VirtualizedContainerService.HintSize="654,410" sap2010:WorkflowViewState.IdRef="If_6">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="304,256" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <av:Point x:Key="ShapeLocation">230.666666666667,186.666666666667</av:Point>
-                          <av:Size x:Key="ShapeSize">105.333333333333,86.6666666666667</av:Size>
-                          <av:PointCollection x:Key="FalseConnector">336,230 460,230 460,265.333333333333</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <FlowDecision.False>
-                        <x:Reference>__ReferenceID0</x:Reference>
-                      </FlowDecision.False>
-                    </FlowDecision>
-                  </FlowStep.Next>
-                </FlowStep>
-              </FlowStep.Next>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_11">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[MailSubject]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[String.Format("[{0}] 사업자 등록 완료", BizName)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_12">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[MailBody]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[String.Format("{0} 의 사업자 등록 절차가 완료 되었습니다. \n업체의 등록 정보는 첨부와 같습니다.", BizName)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="304,256" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_13">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[MailSubject]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[String.Format("[{0}] 사업자 등록 오류 발생", BizName)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_14">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[MailBody]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[String.Format("{0} 의 사업자 등록 절차에서 오류가 발생하여 정상적으로 등록 절차가 진행되지 못했습니다.\nOCR 인식 결과에 오류가 있거나 잘못된 정보를 사용하여 등록 요청이 되었습니다.", BizName)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <ui:SendMail Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Bcc="hyungsoo.kim@uipath.com" Body="[MailBody]" DisplayName="Send SMTP Mail Message" Email="clovarpatest@outlook.kr" EnableSSL="True" sap:VirtualizedContainerService.HintSize="654,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Name="UiPath Robot" Password="aa12345!!" Port="587" SecureConnection="Auto" Server="smtp.office365.com" Subject="[MailSubject]" To="don@company.ai, noah.go@company.ai, carpfish.lee@navercorp.com,dj.song@navercorp.com">
+                  <ui:SendMail.Files>
+                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                      <InArgument x:TypeArguments="x:String">[String.Format("사업자등록번호-{0}.xlsx", CompRegNo)]</InArgument>
+                    </scg:List>
+                  </ui:SendMail.Files>
+                </ui:SendMail>
+              </Sequence>
             </FlowStep>
           </FlowDecision.True>
           <FlowDecision.False>
-            <x:Reference>__ReferenceID1</x:Reference>
+            <FlowStep x:Name="__ReferenceID1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">190,119</av:Point>
+                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">290,141 290,171 283.333333333333,171 283.333333333333,186.666666666667</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ShouldStop DisplayName="Should Stop" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ShouldStop_1" Result="[StopSignal]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:ShouldStop>
+              <FlowStep.Next>
+                <FlowDecision x:Name="__ReferenceID2" Condition="[StopSignal]" DisplayName="중지요청이 있는지" sap:VirtualizedContainerService.HintSize="105.333333333333,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">230.666666666667,186.666666666667</av:Point>
+                      <av:Size x:Key="ShapeSize">105.333333333333,86.6666666666667</av:Size>
+                      <av:PointCollection x:Key="FalseConnector">336,230 460,230 460,265.333333333333</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <FlowDecision.False>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                  </FlowDecision.False>
+                </FlowDecision>
+              </FlowStep.Next>
+            </FlowStep>
           </FlowDecision.False>
         </FlowDecision>
       </FlowStep.Next>
